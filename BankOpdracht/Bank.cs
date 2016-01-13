@@ -9,6 +9,6 @@ namespace BankOpdracht
 {
     public class Bank
     {
-
+        
     }
 }
