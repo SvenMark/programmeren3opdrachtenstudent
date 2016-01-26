@@ -13,6 +13,4 @@ namespace Galgje
     {
        
     }
-
-
 }

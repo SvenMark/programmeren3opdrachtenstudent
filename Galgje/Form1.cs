@@ -36,20 +36,25 @@ namespace Galgje
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //bool result = hangman.Guess(inputTextbox.Text[0]);
-            //if (result)
+            //char letter = inputTextbox.Text[0];
+            //if (!hangman.HasGuessedLetterBefore(letter))
             //{
             //    button1.BackColor = Color.Green;
+            //    if (hangman.Guess(letter))
+            //    {
+            //        UpdateLabels(hangman.GetWordForDisplay());
+            //    }
             //}
             //else
             //{
             //    button1.BackColor = Color.Red;
             //}
+
             //inputTextbox.Text = "";
             //inputTextbox.Focus();
 
 
-            //UpdateLabels(hangman.GetWordForDisplay());
+
             //Refresh(); //om repaint te triggeren
 
             //if (hangman.Won())

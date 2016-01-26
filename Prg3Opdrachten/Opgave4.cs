@@ -91,7 +91,7 @@ namespace Prg3Opdrachten
         public void TestToPostfix5()
         {
             string infix = "A * ( B + C ) * D";
-            string expected = "A B C + D * *";
+            string expected = "A B C + * D *";
             string actual = ToPostfix(infix);
             Assert.AreEqual(expected, actual);
         }
