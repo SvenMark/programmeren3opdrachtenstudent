@@ -16,7 +16,7 @@ namespace Prg3Opdrachten
 
         private static QueueType type = QueueType.Queue;
 
-        public static void SetQueueType<T>(QueueType queueType)
+        public static void SetQueueType(QueueType queueType)
         {
             type = queueType;
         }
