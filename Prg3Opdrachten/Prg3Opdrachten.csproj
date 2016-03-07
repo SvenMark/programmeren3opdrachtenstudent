@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayStack.cs" />
+    <Compile Include="InformaticaDictionary.cs" />
     <Compile Include="QueueFactory.cs" />
     <Compile Include="StackFactory.cs" />
     <Compile Include="MyQueue.cs" />
