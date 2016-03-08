@@ -54,9 +54,9 @@ namespace Prg3Opdrachten
         private static Course se = new Course() { VakNr = 4, Name = "Software Engineering", Teacher = "David" };
         private static Course python = new Course() { VakNr = 5, Name = "Python", Teacher = "Wouter" };
 
-        private static List<Course> courses = new List<Course>() {
-            cSharp, math, coo, se, python
-        };
+        
+        private static Course pythonJoris = new Course() { VakNr = 6, Name = "Python", Teacher = "Joris" };
+        
 
         private static List<Exam> exams = new List<Exam>() {
             new Exam() { Student = jan,       Course = math,      Score = 3 },
@@ -73,9 +73,18 @@ namespace Prg3Opdrachten
             new Exam() { Student = katrijn,   Course = se,        Score = 9.5m }
         };
 
+        //Zie opmerking hieronder!
+        private static List<Course> courses = new List<Course>() {
+            cSharp, math, coo, se, python //, pythonJoris
+        };
+
+        //Opmerking: dit gaat goed, maar dan ook alleen maar omdat geen enkele sleutel duplicaten heeft!
+        //In de echt wereld gaat dit niet goed, als pythonJoris toegevoegd wordt ontstaat er een exception (runtime fout).
         private static Dictionary<int, Course> courseByVakNr = courses.ToDictionary(crs => crs.VakNr);
         private static Dictionary<string, Course> courseByName = courses.ToDictionary(crs => crs.Name);
         private static Dictionary<string, Course> courseByTeacher = courses.ToDictionary(crs => crs.Teacher);
+
+
 
         private static Dictionary<string, Student> studentByName = new Dictionary<string, Student>()
         {
