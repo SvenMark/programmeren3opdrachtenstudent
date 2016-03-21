@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Prg3Opdrachten
 {
+    ////zie Blackboard voor opdrachten uitleg
+
     //Het idee is al volgt:
     //de meeste programmeertalen gebruiken diverse haakjes. 
     //Tegen over een open haakje moet een sluit haakje staan.
     //Het controleren van haakjes kan je met m.b.v. een stack.
-    
+
     //het idee is dat je een methode maakt die controleert of de haakjes kloppen.
     //b.v.      "(3+2)/a[3+2]"      ==> true
     //          "(3+2/a[3+2]"       ==> false

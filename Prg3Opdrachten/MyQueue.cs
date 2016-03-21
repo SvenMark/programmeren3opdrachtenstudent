@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Prg3Opdrachten
 {
-    
-
     //https://en.wikipedia.org/wiki/Circular_buffer
     //zie sheets...
+    //zie Blackboard voor opdrachten uitleg
     public class MyQueue<T> : IQueue<T>
     {
         //Mijn tip: gebruik een extra variabele count om bij te houden hoeveel elementen er momenteel in de queue zitten.

@@ -9,6 +9,7 @@ namespace Prg3Opdrachten
 {
     class Opgave4
     {
+        //zie Blackboard voor opdrachten uitleg
         public static int PostFixEvaluation(string postfix)
         {
             IStack<int> stack = StackFactory.CreateStack<int>();

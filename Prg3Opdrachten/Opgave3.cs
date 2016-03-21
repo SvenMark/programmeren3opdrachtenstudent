@@ -9,6 +9,8 @@ namespace Prg3Opdrachten
 {
     class Opgave3
     {
+        ////zie Blackboard voor opdrachten uitleg
+
         //Palindrome checker. 
         //Schrijf een methode (Paldindroom) die gegeven een string bekijkt of het een palindroom betreft. 
         //Leestekens, spaties en case (kleine of hooddletters) moet je negeren. 

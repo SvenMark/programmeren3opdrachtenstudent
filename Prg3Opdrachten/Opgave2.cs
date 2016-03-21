@@ -9,6 +9,8 @@ namespace Prg3Opdrachten
 {
     class Opgave2
     {
+        ////zie Blackboard voor opdrachten uitleg
+
         //Opgave 2. Er staan k mensen in een rij (queue).
         //De mensen worden in volgorde genummerd van 1,2,3,...,k 
         //als je vooraankomt bij het loket wordt je in tweeën gesplitst en sluit je achteraan. 

@@ -84,8 +84,6 @@ namespace Prg3Opdrachten
         private static Dictionary<string, Course> courseByName = courses.ToDictionary(crs => crs.Name);
         private static Dictionary<string, Course> courseByTeacher = courses.ToDictionary(crs => crs.Teacher);
 
-
-
         private static Dictionary<string, Student> studentByName = new Dictionary<string, Student>()
         {
             [jan.Name] = jan,

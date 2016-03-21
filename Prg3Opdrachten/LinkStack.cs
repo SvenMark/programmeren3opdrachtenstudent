@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Prg3Opdrachten
 {
+    //zie Blackboard voor opdrachten uitleg
     public class LinkStack<T> : IStack<T>
     {
         private class Node
