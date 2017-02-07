@@ -22,7 +22,23 @@ namespace Galgje
                     result = word;
                 }
             }
+            if (result.Length < 6)
+            {
+                result = words[0];
+            }
+            words.Remove(result);
             return result;
+        }
+
+        public void RemoveWord(string remove)
+        {
+            foreach (string word in words)
+            {
+                if (word == remove)
+                {
+                    words.Remove(remove);
+                }
+            }
         }
     }
 }

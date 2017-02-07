@@ -69,6 +69,7 @@ namespace Galgje
             {
                 if (c == g)
                 {
+                    turn += 1;
                     return true;
                 }
             }
