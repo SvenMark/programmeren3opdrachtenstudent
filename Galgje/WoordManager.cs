@@ -1,6 +1,7 @@
 ﻿//using NUnit.Framework;
 //using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 //using System.IO;
 //using System.Linq;
 //using System.Text;
@@ -14,6 +15,10 @@ namespace Galgje
         private List<string> words = new List<string> { "banaan", "bijlage", "afspraak", "afrikaans", "aangedrukt", "zaaimachine", "yoghurtplant" };
         public string GetWord(int letters)
         {
+            if (words.Count == 0)
+            {
+                MessageBox.Show("Finish");
+            }
             string result = "";
             foreach (string word in words)
             {
