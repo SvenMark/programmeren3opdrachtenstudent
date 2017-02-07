@@ -24,53 +24,55 @@ namespace Galgje
             StartNewGame();
         }
 
-        private void StartNewGame() {
-            //Random r = new Random();
-            //string word = wm.GetWord(r.Next(6, 12));            
-            //hangman = new Hangman(word, maxTurns: 11);
-            //string wordForDisplay = hangman.GetWordForDisplay();
-            //CreateLetters(hangman.GetWordForDisplay());
-            //Refresh(); //om repaint te triggeren
+        private void StartNewGame()
+        {
+            Random r = new Random();
+            string word = wm.GetWord(r.Next(6, 12));
+            hangman = new Hangman(word, maxTurns: 11);
+            string wordForDisplay = hangman.GetWordForDisplay();
+            CreateLetters(wordForDisplay);
+            Refresh(); //om repaint te triggeren
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //char letter = inputTextbox.Text[0];
-            //if (!hangman.HasGuessedLetterBefore(letter))
-            //{
-            //    button1.BackColor = Color.Green;
-            //    if (hangman.Guess(letter))
-            //    {
-            //        UpdateLabels(hangman.GetWordForDisplay());
-            //    }
-            //}
-            //else
-            //{
-            //    button1.BackColor = Color.Red;
-            //}
+            char letter = inputTextbox.Text[0];
+            if (!hangman.HasGuessedLetterBefore(letter))
+            {
+                button1.BackColor = Color.Yellow;
+                if (hangman.Guess(letter))
+                {
+                    button1.BackColor = Color.Green;
+                    UpdateLabels(hangman.GetWordForDisplay());
+                }
+            }
+            else
+            {
+                button1.BackColor = Color.Red;
+            }
 
-            //inputTextbox.Text = "";
-            //inputTextbox.Focus();
+            inputTextbox.Text = "";
+            inputTextbox.Focus();
 
 
 
-            //Refresh(); //om repaint te triggeren
+            Refresh(); //om repaint te triggeren
 
-            //if (hangman.Won())
-            //{
-            //    MessageBox.Show("Je hebt gewonnen!");
-            //    StartNewGame();
-            //}
-            //else if (hangman.Lose())
-            //{
-            //    MessageBox.Show("Je hebt verloren!");
-            //    StartNewGame();
-            //}
+            if (hangman.Won())
+            {
+                MessageBox.Show("Je hebt gewonnen!");
+                StartNewGame();
+            }
+            else if (hangman.Lose())
+            {
+                MessageBox.Show("Je hebt verloren!");
+                StartNewGame();
+            }
         }
 
         private void UpdateLabels(string word)
-        {            
+        {
             for (int i = 0; i < word.Length; i++)
             {
                 labels[i].Text = word[i].ToString();
@@ -112,7 +114,7 @@ namespace Galgje
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //hangManImages.Draw(e.Graphics, 100, 150, hangman.TurnNumber);
+            hangManImages.Draw(e.Graphics, 100, 150, hangman.TurnNumber());
         }
     }
 }
