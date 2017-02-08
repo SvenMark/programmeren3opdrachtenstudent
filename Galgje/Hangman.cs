@@ -18,6 +18,7 @@ namespace Galgje
         public Hangman(string word)
         {
             this.word = word;
+            maxTurns = 500;
             for (int i = 0; i <= word.Length - 1; i++) { goodpart.Add('-'); }
         }
 
