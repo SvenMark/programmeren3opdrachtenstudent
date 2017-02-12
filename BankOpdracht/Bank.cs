@@ -9,28 +9,27 @@ namespace BankOpdracht
 {
     public class Bank
     {
-        private string bankNaam;
-        private List<Rekening> Rekeningen;
-        private int index = 0;
+        public string Naam;
+        private int accountNumber;
 
-        public Bank(string bankNaam)
+        public Bank(string Naam)
         {
-            this.bankNaam = bankNaam;
+            this.Naam = Naam;
         }
 
-        public void OpenRekening()
+        public int OpenRekening(string firstName, string lastName, string houseNumber, string postalCode)
         {
-            Rekening  = new Rekening();
+            return accountNumber;
         }
 
-        public void VerwijderRekening()
+        public int OpenRekening(string firstName, string lastName, string houseNumber, string postalCode, int startSaldo)
         {
-            
+            return accountNumber;
         }
 
-        public void ZoekRekening()
+        public int OpenRekening(string firstName, string lastName, string houseNumber, string postalCode, int startSaldo, int salary)
         {
-            
+            return accountNumber;
         }
     }
 }
