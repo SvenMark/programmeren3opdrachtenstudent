@@ -9,12 +9,17 @@ namespace BankOpdracht
 {
     public class Bank
     {
-        public string Naam;
+        private string naam;
         private int accountNumber;
 
-        public Bank(string Naam)
+        public Bank(string naam)
         {
-            this.Naam = Naam;
+            this.naam = naam;
+        }
+
+        public string Naam
+        {
+            get { return naam; }
         }
 
         public int OpenRekening(string firstName, string lastName, string houseNumber, string postalCode)
