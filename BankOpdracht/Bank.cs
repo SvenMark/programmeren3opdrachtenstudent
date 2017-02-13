@@ -55,6 +55,7 @@ namespace BankOpdracht
 
         public Rekening VerwijderRekening(int rekeningNummer)
         {
+            //andere opties??
             //rekeningen.Remove() kan niet want dan schuiven de rekeningnummers op en komen de indexes niet meer overeen.
             Rekening rekening = rekeningen[rekeningNummer];
             rekeningen[rekeningNummer] = null;
@@ -79,7 +80,18 @@ namespace BankOpdracht
 
         public string ToString()
         {
-            return "Naam van bank " + naam;
+            string result = "Naam van bank: " + naam + "\n";
+            foreach (Rekening r in rekeningen)
+            {
+                //als een object-instantie wordt verwijdert word hij naar null gezet en die geeft hier een error.
+                if (r != null)
+                {
+                    result += r.ToString() + "\n";
+                }
+            }
+            return result;
+
+
 
             //Console.WriteLine("---------------------------");
             //Console.WriteLine("Naam van bank: {0}", naam);
