@@ -8,5 +8,18 @@ namespace Vliegveld
 {
     class Uitvoerder
     {
+        public string VluchtNr { get; set; }
+        public Maatschappij Maatschappij { get; set; }
+        public Vlucht Vlucht { get; set; }
+
+        public Uitvoerder(string vluchtNr, Maatschappij maatschappij, Vlucht vlucht)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

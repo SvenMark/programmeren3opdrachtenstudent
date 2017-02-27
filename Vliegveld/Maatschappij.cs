@@ -8,5 +8,17 @@ namespace Vliegveld
 {
     class Maatschappij
     {
+        public string Naam { get; set; }
+        public string Afkorting { get; set; }
+
+        public Maatschappij(string naam, string afkorting)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

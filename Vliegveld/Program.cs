@@ -10,7 +10,7 @@ namespace Vliegveld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Vliegtuig");
+            
         }
     }
 }
