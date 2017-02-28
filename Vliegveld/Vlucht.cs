@@ -17,7 +17,7 @@ namespace Vliegveld
 
         public Vlucht(Vliegtuig vliegtuig, Luchthaven van, Luchthaven naar, DateTime vertrek, string status)
         {
-            throw new NotImplementedException();
+            //Status = records[0].Status;
         }
 
         public void AddUitvoerder(Maatschappij maatschappij, string vluchtNr)
