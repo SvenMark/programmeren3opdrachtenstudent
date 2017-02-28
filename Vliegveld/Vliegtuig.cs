@@ -15,7 +15,9 @@ namespace Vliegveld
 
         public Vliegtuig(string callsign, string model, string fabrikant)
         {
-            throw new NotImplementedException();
+            Callsign = callsign;
+            Model = model;
+            Fabrikant = fabrikant;
         }
 
         public string ToString()

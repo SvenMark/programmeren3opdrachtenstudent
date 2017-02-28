@@ -13,7 +13,8 @@ namespace Vliegveld
 
         public Maatschappij(string naam, string afkorting)
         {
-            throw new NotImplementedException();
+            Naam = naam;
+            Afkorting = afkorting;
         }
 
         public string ToString()

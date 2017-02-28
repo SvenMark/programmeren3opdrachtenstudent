@@ -17,7 +17,11 @@ namespace Vliegveld
 
         public Vlucht(Vliegtuig vliegtuig, Luchthaven van, Luchthaven naar, DateTime vertrek, string status)
         {
-            //Status = records[0].Status;
+            Vliegtuig = vliegtuig;
+            Van = van;
+            Naar = naar;
+            Vertrek = vertrek;
+            Status = status;
         }
 
         public void AddUitvoerder(Maatschappij maatschappij, string vluchtNr)

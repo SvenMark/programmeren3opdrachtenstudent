@@ -13,7 +13,8 @@ namespace Vliegveld
 
         public Luchthaven(string naam, string afkorting)
         {
-            throw new NotImplementedException();
+            Naam = naam;
+            Afkorting = afkorting;
         }
 
         public string ToString()

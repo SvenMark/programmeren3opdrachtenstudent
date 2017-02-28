@@ -14,7 +14,9 @@ namespace Vliegveld
 
         public Uitvoerder(string vluchtNr, Maatschappij maatschappij, Vlucht vlucht)
         {
-            throw new NotImplementedException();
+            VluchtNr = vluchtNr;
+            Maatschappij = maatschappij;
+            Vlucht = vlucht;
         }
 
         public string ToString()
