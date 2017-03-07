@@ -36,7 +36,18 @@ namespace Prg3Opdrachten
         public int DoubleQueueProblem(int k, int n)
         {
             IQueue<int> people = QueueFactory.CreateQueue<int>();
-            throw new NotImplementedException();
+            for (int i = 1; i <= k; i++)
+            {
+                people.Enqueue(i);
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                int person = people.Dequeue();
+                people.Enqueue(person);
+                people.Enqueue(person);
+            }
+            return people.Dequeue();
         }
 
         [Test]

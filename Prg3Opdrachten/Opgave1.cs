@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework.Constraints;
 
 namespace Prg3Opdrachten
 {
@@ -23,15 +25,36 @@ namespace Prg3Opdrachten
 
     public class Opgave1
     {
-        private static List<char> openParenthesis   = new List<char> { '(', '{', '[' };
-        private static List<char> closeParenthesis  = new List<char> { ')', '}', ']' };
+        private static List<char> openParenthesis = new List<char> {'(', '{', '['};
+        private static List<char> closeParenthesis = new List<char> {')', '}', ']'};
 
         //opgave 1
         public static bool CheckParenthesis(string input)
         {
             IStack<char> par = StackFactory.CreateStack<char>();
-
-            throw new NotImplementedException();
+            if (input == null) return true;
+            foreach (char c in input)
+            {
+                if (openParenthesis.Contains(c))
+                {
+                    par.Push(c);
+                }
+                if (closeParenthesis.Contains(c))
+                {
+                    int index = 0;
+                    for (int i = 0; i < closeParenthesis.Count; i++)
+                    {
+                        if (c == closeParenthesis[i])
+                        {
+                            index = i;
+                            break;
+                        }
+                    }
+                    if (par.Pop() != openParenthesis[index]) return false;
+                }
+            }
+            if (par.Count > 0) return false;
+            return true;
         }
     }
 

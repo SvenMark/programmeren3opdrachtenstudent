@@ -13,7 +13,39 @@ namespace Prg3Opdrachten
         public static int PostFixEvaluation(string postfix)
         {
             IStack<int> stack = StackFactory.CreateStack<int>();
-            throw new NotImplementedException();
+            int count = 0;
+            postfix = postfix.Replace(" ", "");
+            foreach (char c in postfix)
+            {
+                if (c == ' ') continue;
+                if (operators.Contains(c.ToString()))
+                {
+                    int a = stack.Pop();
+                    int b = stack.Pop();
+                    switch (c.ToString())
+                    {
+                        case "*":
+                            count = b * a;
+                            break;
+                        case "/":
+                            count = b / a;
+                            break;
+                        case "+":
+                            count = b + a;
+                            break;
+                        case "-":
+                            count = b - a;
+                            break;
+                    }
+                    stack.Push(count);
+                }
+                else
+                {
+                    stack.Push(Convert.ToInt32(c.ToString()));
+                }
+
+            }
+            return count;
         }
 
         static List<string> operators = new List<string> { "*", "/", "+", "-" };
