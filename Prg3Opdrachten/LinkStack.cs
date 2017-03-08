@@ -15,30 +15,94 @@ namespace Prg3Opdrachten
             public T value;
             public Node next;
         }
+        private Node top;
 
         public int Count
         {
             get
             {
-                throw new NotImplementedException();
+                int count = 0;
+                if (top == null)
+                {
+                    return count;
+                }
+
+                Node current = top;
+                while (current != null)
+                {
+                    count++;
+                    current = current.next;
+                }
+
+                return count;
             }
         }
 
-        public void Push(T value)
+        public int CountEven
         {
-            throw new NotImplementedException();
+            get
+            {
+                int count = 0;
+                if (top == null)
+                {
+                    return count;
+                }
+
+                Node current = top;
+                while (current != null)
+                {
+                    if (Convert.ToInt32(current.value) % 2 == 0)
+                    {
+                        count++;
+                    }
+
+                    current = current.next;
+                }
+
+                return count;
+            }
+        }
+
+        public void Push(T val)
+        {
+            top = new Node() { value = val, next = top };
         }
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            T toReturn = top.value;
+            top = top.next;
+            return toReturn;
         }
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            return top.value;
+        }
+
+        public string Print()
+        {
+            if (top == null)
+            {
+                return null;
+            }
+
+
+            Node current = top;
+            string returVal = "";
+            while (current != null)
+            {
+                returVal += current.value;
+                if (current.next != null)
+                {
+                    returVal += ",";
+                }
+                current = current.next;
+            }
+
+            return returVal;
         }
     }
 
-   
+
 }

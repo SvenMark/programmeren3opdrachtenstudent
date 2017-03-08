@@ -9,35 +9,71 @@ namespace Prg3Opdrachten
 {
     public class ArrayStack<T> : IStack<T>
     {
-        public int Count
+        private T[] _array;
+        private int _index;
+        public int Count => _index + 1;
+        public int Capacity => _array.Length;
+
+        public ArrayStack(int stackLength = 2)
         {
-            get 
-            { 
-                throw new NotImplementedException(); 
-            }
+            _array = new T[stackLength];
+            _index = -1;
         }
 
-        public int Capacity
-        {
-            get 
-            { 
-                throw new NotImplementedException(); 
-            }
-        }
 
-        public void Push(T value)
+        public T Peek()
         {
-            throw new NotImplementedException();
+            if (_index == -1)
+            {
+                throw new ArgumentException("The Array Stack is empty");
+            }
+
+            return _array[_index];
         }
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            if (_index == -1)
+            {
+                throw new ArgumentException("The Array Stack is empty");
+            }
+            if (_index < _array.Length / 4)
+            {
+                Shrink();
+            }
+
+            var result = _array[_index];
+            _index--;
+            return result;
         }
 
-        public T Peek()
+        public void Push(T o)
         {
-            throw new NotImplementedException();
+            _index++;
+            if (_index == _array.Length)
+            {
+                Grow();
+            }
+
+            _array[_index] = o;
         }
-    }    
+
+
+        private void Grow()
+        {
+            int elementsNewLength = _array.Length * 2;
+            T[] newElements = new T[elementsNewLength];
+            Array.Copy(_array, newElements, _array.Length);
+            _array = newElements;
+        }
+
+
+        private void Shrink()
+        {
+            int elementsNewLength = _array.Length / 2;
+            T[] newElements = new T[elementsNewLength];
+            Array.Copy(_array, newElements, elementsNewLength);
+            _array = newElements;
+        }
+    }
 }
