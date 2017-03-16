@@ -32,29 +32,29 @@ namespace Prg3Opdrachten
         public static bool CheckParenthesis(string input)
         {
             IStack<char> par = StackFactory.CreateStack<char>();
-            if (input == null) return true;
-            foreach (char c in input)
+
+            if (input == null)
             {
-                if (openParenthesis.Contains(c))
+                return true;
+            }
+
+            foreach (char letter in input)
+            {
+                if (openParenthesis.Contains(letter))
                 {
-                    par.Push(c);
+                    par.Push(letter);
                 }
-                if (closeParenthesis.Contains(c))
+                else if (closeParenthesis.Contains(letter))
                 {
-                    int index = 0;
-                    for (int i = 0; i < closeParenthesis.Count; i++)
+                    if (par.Count == 0)
                     {
-                        if (c == closeParenthesis[i])
-                        {
-                            index = i;
-                            break;
-                        }
+                        return false;
                     }
-                    if (par.Pop() != openParenthesis[index]) return false;
+                    par.Pop();
                 }
             }
-            if (par.Count > 0) return false;
-            return true;
+
+            return par.Count == 0;
         }
     }
 

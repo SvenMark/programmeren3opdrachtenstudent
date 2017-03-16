@@ -27,39 +27,30 @@ namespace Prg3Opdrachten
             IStack<char> s = StackFactory.CreateStack<char>();
             IQueue<char> q = QueueFactory.CreateQueue<char>();
 
-            if (String.IsNullOrWhiteSpace(input)) return false;
-            input = input.Replace(",", "");
-            input = input.Replace(".", "");
-            input = input.Replace(" ", "");
-            input = input.Replace("'", "");
-            input = input.ToLower();
-            string output = "";
-            
-            //queue oplossing
-            for (int i = input.Length - 1; i >= 0; i--)
+            if (string.IsNullOrWhiteSpace(input))
             {
-                q.Enqueue(input[i]);
+                return false;
             }
 
-            for (int i = 0; i < input.Length; i++)
+            foreach (char letter in input)
             {
-                output = output.Insert(output.Length, q.Dequeue().ToString());
+                if (letter != ',' && letter != '.' && letter != ' ' && letter != '\'')
+                {
+                    s.Push(letter);
+                    q.Enqueue(letter);
+                }
             }
-            if (output != input) return false;
-            return true;
 
+            bool charactersAreEqual = true;
+            while (q.Count != 0 && charactersAreEqual)
+            {
+                char letter1 = q.Dequeue();
+                char letter2 = s.Pop();
 
-            //stackoplossing
-            //foreach (char c in input)
-            //{
-            //    s.Push(c);
-            //}
-            //for (int i = 0; i < input.Length; i++)
-            //{
-            //    output = output.Insert(output.Length, s.Pop().ToString());
-            //}
-            //if (output != input) return false;
-            //return true;
+                charactersAreEqual = char.ToLower(letter1) == char.ToLower(letter2);
+            }
+
+            return charactersAreEqual;
         }
 
 
